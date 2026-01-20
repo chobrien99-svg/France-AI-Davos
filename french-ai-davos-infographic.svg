@@ -1,0 +1,452 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" style="background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%)">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="frenchBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0055A4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="frenchRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4135;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="quantumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="spaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cleantechGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="fintechGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="roboticsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#30cfd0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#330867;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Stronger glow for center -->
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="960" y="50" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#ffffff" text-anchor="middle" filter="url(#glow)">
+    FRENCH AI LEADERS AT DAVOS 2026
+  </text>
+  <text x="960" y="85" font-family="Arial, sans-serif" font-size="18" fill="#a0aec0" text-anchor="middle">
+    World Economic Forum • January 19-23, 2026 • 23 Companies • European Tech Leadership
+  </text>
+
+  <!-- Connection lines (background) -->
+  <!-- AI sector connections -->
+  <line x1="960" y1="300" x2="450" y2="200" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="350" y2="300" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="400" y2="400" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Quantum connections -->
+  <line x1="960" y1="300" x2="1470" y2="200" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1570" y2="300" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Space connections -->
+  <line x1="960" y1="300" x2="1470" y2="600" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1570" y2="700" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Cleantech connections -->
+  <line x1="960" y1="300" x2="450" y2="600" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="350" y2="700" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- FinTech connections -->
+  <line x1="960" y1="300" x2="750" y2="850" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="950" y2="900" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Robotics connections -->
+  <line x1="960" y1="300" x2="1170" y2="850" stroke="url(#roboticsGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Central node: Emmanuel Macron & France -->
+  <circle cx="960" cy="300" r="80" fill="url(#frenchBlue)" filter="url(#strongGlow)" opacity="0.9"/>
+  <circle cx="960" cy="300" r="70" fill="none" stroke="url(#frenchRed)" stroke-width="3" opacity="0.8"/>
+  <text x="960" y="290" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    EMMANUEL
+  </text>
+  <text x="960" y="310" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    MACRON
+  </text>
+  <text x="960" y="330" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    President
+  </text>
+
+  <!-- Strategic Theme Banners (top corners) -->
+  <g id="franco-german">
+    <rect x="50" y="120" width="250" height="60" rx="10" fill="url(#frenchBlue)" opacity="0.8"/>
+    <text x="175" y="145" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      🇫🇷 🇩🇪 FRANCO-GERMAN
+    </text>
+    <text x="175" y="165" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+      AI & Quantum Partnership
+    </text>
+  </g>
+
+  <g id="european-sovereignty">
+    <rect x="1620" y="120" width="250" height="60" rx="10" fill="url(#frenchRed)" opacity="0.8"/>
+    <text x="1745" y="145" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      🇪🇺 TECH SOVEREIGNTY
+    </text>
+    <text x="1745" y="165" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+      vs US & China Competition
+    </text>
+  </g>
+
+  <g id="g7-presidency">
+    <rect x="835" y="420" width="250" height="45" rx="8" fill="#2d3748" opacity="0.9" stroke="#667eea" stroke-width="2"/>
+    <text x="960" y="445" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      🌐 G7 PRESIDENCY 2026
+    </text>
+    <text x="960" y="460" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e0" text-anchor="middle">
+      450K jobs • 18K startups
+    </text>
+  </g>
+
+  <!-- AI SECTOR (Left side) -->
+  <g id="ai-sector">
+    <circle cx="450" cy="200" r="55" fill="url(#aiGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="450" y="195" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      MISTRAL AI
+    </text>
+    <text x="450" y="210" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+      Arthur Mensch
+    </text>
+    <text x="450" y="225" font-family="Arial, sans-serif" font-size="9" fill="#cbd5e0" text-anchor="middle">
+      🦄 Decacorn
+    </text>
+
+    <circle cx="350" cy="300" r="40" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="350" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      H Company
+    </text>
+    <text x="350" y="315" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
+      Gauthier Cloix
+    </text>
+    <text x="350" y="328" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Agentic AI
+    </text>
+
+    <circle cx="400" cy="400" r="38" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="400" y="398" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Bioptimus
+    </text>
+    <text x="400" y="411" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+      AI + Biology
+    </text>
+
+    <circle cx="250" cy="250" r="35" fill="url(#aiGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="250" y="250" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Safran.AI
+    </text>
+    <text x="250" y="263" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+      Defense AI
+    </text>
+
+    <circle cx="250" cy="350" r="32" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
+    <text x="250" y="350" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Sekoia.io
+    </text>
+    <text x="250" y="362" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+      Cybersecurity
+    </text>
+
+    <circle cx="170" cy="420" r="30" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
+    <text x="170" y="420" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Pelico
+    </text>
+    <text x="170" y="432" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+      Mfg AI
+    </text>
+
+    <text x="280" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#667eea" text-anchor="middle">
+      🤖 ARTIFICIAL INTELLIGENCE
+    </text>
+  </g>
+
+  <!-- QUANTUM SECTOR (Right top) -->
+  <g id="quantum-sector">
+    <circle cx="1470" cy="200" r="50" fill="url(#quantumGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="1470" y="195" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      QUANDELA
+    </text>
+    <text x="1470" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+      Niccolò Somaschi
+    </text>
+    <text x="1470" y="223" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Quantum Computing
+    </text>
+
+    <circle cx="1570" cy="300" r="45" fill="url(#quantumGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="1570" y="298" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      QUOBLY
+    </text>
+    <text x="1570" y="312" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
+      Maud Vinet
+    </text>
+    <text x="1570" y="325" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Quantum Apps
+    </text>
+
+    <text x="1600" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f093fb" text-anchor="middle">
+      ⚛️ QUANTUM COMPUTING
+    </text>
+  </g>
+
+  <!-- SPACE SECTOR (Right bottom) -->
+  <g id="space-sector">
+    <circle cx="1470" cy="600" r="45" fill="url(#spaceGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="1470" y="598" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      EXOTRAIL
+    </text>
+    <text x="1470" y="612" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+      In-space Mfg
+    </text>
+
+    <circle cx="1570" cy="700" r="42" fill="url(#spaceGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="1570" y="698" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      ALDORIA
+    </text>
+    <text x="1570" y="711" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+      Satellites
+    </text>
+
+    <circle cx="1600" cy="800" r="38" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="1600" y="797" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Exploration
+    </text>
+    <text x="1600" y="808" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Company
+    </text>
+
+    <circle cx="1400" cy="720" r="35" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="1400" y="720" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      EUTELSAT
+    </text>
+    <text x="1400" y="732" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+      Infrastructure
+    </text>
+
+    <text x="1550" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4facfe" text-anchor="middle">
+      🚀 NEW SPACE
+    </text>
+  </g>
+
+  <!-- CLEANTECH SECTOR (Left bottom) -->
+  <g id="cleantech-sector">
+    <circle cx="450" cy="600" r="48" fill="url(#cleantechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="450" y="595" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      VERKOR
+    </text>
+    <text x="450" y="609" font-family="Arial, sans-serif" font-size="10" fill="#1a202c" text-anchor="middle">
+      Benoît Lemaignan
+    </text>
+    <text x="450" y="622" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+      EV Batteries
+    </text>
+
+    <circle cx="350" cy="700" r="40" fill="url(#cleantechGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="350" y="698" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      DIOXYCLE
+    </text>
+    <text x="350" y="712" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
+      Recycling Tech
+    </text>
+
+    <circle cx="280" cy="800" r="36" fill="url(#cleantechGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="280" y="797" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Sweetch
+    </text>
+    <text x="280" y="809" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Energy
+    </text>
+
+    <text x="350" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#43e97b" text-anchor="middle">
+      🌱 CLEANTECH
+    </text>
+  </g>
+
+  <!-- FINTECH SECTOR (Bottom center-left) -->
+  <g id="fintech-sector">
+    <circle cx="750" cy="850" r="48" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="750" y="845" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      PIGMENT
+    </text>
+    <text x="750" y="859" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
+      Éléonore Crespo
+    </text>
+    <text x="750" y="872" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+      Financial Planning
+    </text>
+
+    <circle cx="950" cy="900" r="48" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="950" y="895" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      QONTO
+    </text>
+    <text x="950" y="909" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
+      Alexandre Prot
+    </text>
+    <text x="950" y="922" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+      Digital Banking
+    </text>
+
+    <circle cx="600" cy="920" r="38" fill="url(#fintechGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="600" y="920" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      LEDGER
+    </text>
+    <text x="600" y="933" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
+      Crypto Security
+    </text>
+
+    <text x="750" y="810" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fa709a" text-anchor="middle">
+      💰 FINTECH
+    </text>
+  </g>
+
+  <!-- ROBOTICS SECTOR (Bottom center-right) -->
+  <g id="robotics-sector">
+    <circle cx="1170" cy="850" r="48" fill="url(#roboticsGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="1170" y="845" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      EXOTEC
+    </text>
+    <text x="1170" y="859" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
+      Romain Moulin
+    </text>
+    <text x="1170" y="872" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Warehouse Robotics
+    </text>
+
+    <text x="1170" y="810" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#30cfd0" text-anchor="middle">
+      🤖 ROBOTICS
+    </text>
+  </g>
+
+  <!-- Government Leadership (right side) -->
+  <g id="leadership">
+    <rect x="1350" y="380" width="200" height="90" rx="8" fill="#2d3748" opacity="0.9" stroke="#667eea" stroke-width="2"/>
+    <text x="1450" y="400" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      🏛️ GOVERNMENT
+    </text>
+    <text x="1450" y="420" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+      Julie Huguet
+    </text>
+    <text x="1450" y="435" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Director, French Tech
+    </text>
+    <text x="1450" y="453" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+      Pascal Cagni
+    </text>
+    <text x="1450" y="467" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+      Ambassador, Business France
+    </text>
+  </g>
+
+  <!-- Key Stats Box -->
+  <g id="stats">
+    <rect x="50" y="950" width="350" height="100" rx="10" fill="#2d3748" opacity="0.9" stroke="#43e97b" stroke-width="2"/>
+    <text x="225" y="975" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#43e97b" text-anchor="middle">
+      📊 FRANCE TECH ECOSYSTEM
+    </text>
+    <text x="80" y="1000" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">
+      • 23 Companies at Davos
+    </text>
+    <text x="80" y="1018" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">
+      • 18,000+ Startups Nationally
+    </text>
+    <text x="80" y="1036" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">
+      • 450,000 Tech Sector Jobs
+    </text>
+  </g>
+
+  <!-- Competition Context -->
+  <g id="competition">
+    <rect x="450" y="950" width="420" height="100" rx="10" fill="#2d3748" opacity="0.9" stroke="#f5576c" stroke-width="2"/>
+    <text x="660" y="975" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f5576c" text-anchor="middle">
+      🌍 GLOBAL AI COMPETITION
+    </text>
+    <text x="480" y="1000" font-family="Arial, sans-serif" font-size="11" fill="#ffffff">
+      🇺🇸 US: OpenAI, NVIDIA, Microsoft, Anthropic, DeepMind
+    </text>
+    <text x="480" y="1018" font-family="Arial, sans-serif" font-size="11" fill="#ffffff">
+      🇨🇳 China: DeepSeek challenging American monopoly
+    </text>
+    <text x="480" y="1036" font-family="Arial, sans-serif" font-size="11" fill="#ffffff">
+      🇫🇷 France: Mistral AI (decacorn) leading EU response
+    </text>
+  </g>
+
+  <!-- Event Info -->
+  <g id="event-info">
+    <rect x="920" y="950" width="320" height="100" rx="10" fill="#2d3748" opacity="0.9" stroke="#4facfe" stroke-width="2"/>
+    <text x="1080" y="975" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe" text-anchor="middle">
+      🗓️ BUSINESS FRANCE EVENTS
+    </text>
+    <text x="950" y="997" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Jan 20: AI & Deeptech Lunch
+    </text>
+    <text x="950" y="1013" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Jan 21: Cleantech & Green Industry
+    </text>
+    <text x="950" y="1029" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Jan 22: New Space & Strategy
+    </text>
+    <text x="950" y="1045" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Soirée France: 120+ Participants
+    </text>
+  </g>
+
+  <!-- Additional companies cluster -->
+  <g id="additional">
+    <rect x="1290" y="950" width="580" height="100" rx="10" fill="#2d3748" opacity="0.9" stroke="#667eea" stroke-width="2"/>
+    <text x="1580" y="975" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#667eea" text-anchor="middle">
+      📦 ADDITIONAL COMPANIES
+    </text>
+    <text x="1320" y="997" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Riot Security (Cybersecurity) • KonbOione (Logistics AI)
+    </text>
+    <text x="1320" y="1013" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Axon Cable, CARESTER, Séché Environnement (Cleantech)
+    </text>
+    <text x="1320" y="1029" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      64 Heads of State • International Investors • Business Leaders
+    </text>
+    <text x="1320" y="1045" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">
+      Theme: "Leadership and Collaboration in an Intelligent Age"
+    </text>
+  </g>
+
+  <!-- Decorative network connections (subtle) -->
+  <circle cx="960" cy="540" r="3" fill="#667eea" opacity="0.5"/>
+  <circle cx="720" cy="450" r="2" fill="#f093fb" opacity="0.4"/>
+  <circle cx="1200" cy="450" r="2" fill="#4facfe" opacity="0.4"/>
+  <circle cx="800" cy="650" r="2" fill="#43e97b" opacity="0.4"/>
+  <circle cx="1120" cy="650" r="2" fill="#fa709a" opacity="0.4"/>
+
+</svg>
