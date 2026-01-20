@@ -1,8 +1,19 @@
 # French AI Leaders at Davos 2026
 
-## Infographic Overview
+## Interactive Infographic Overview
 
-This repository contains a comprehensive visual infographic depicting the French delegation to the World Economic Forum in Davos 2026 (January 19-23, 2026).
+This repository contains a comprehensive **interactive visualization** depicting the French delegation to the World Economic Forum in Davos 2026 (January 19-23, 2026).
+
+### 🎮 View the Interactive Version
+
+**Open `index.html` in your browser for the full interactive experience!**
+
+Features:
+- **Floating animations** - Nodes gently float and animate
+- **Hover interactions** - Hover over any company/leader to see detailed information
+- **Sector color-coding** - Visual organization by technology sector
+- **Responsive design** - Works on desktop and mobile
+- **No build required** - Just open the HTML file!
 
 ### Key Highlights
 
@@ -80,14 +91,23 @@ France positions itself as Europe's leading AI power with Mistral AI as the flag
 
 ## Files in This Repository
 
-- `french-ai-davos-infographic.svg` - Main visual infographic
+- **`index.html`** - ⭐ **Interactive animated infographic** (recommended!)
+- `french-ai-davos-infographic.svg` - Static SVG infographic
 - `French Leaders at Davos 2026.pdf` - Comprehensive report
 - `696a3dd645b378c96909268a.pdf` - Business France press release
 - Additional French media articles
 
 ## Viewing the Infographic
 
-Open `french-ai-davos-infographic.svg` in any modern web browser or SVG viewer to see the full interactive visualization.
+**Interactive Version (Recommended):**
+Open `index.html` in any modern web browser to experience the full interactive visualization with:
+- Animated floating nodes
+- Hover-to-reveal detailed information cards
+- Smooth transitions and modern design
+- Sector-based visual organization
+
+**Static Version:**
+Open `french-ai-davos-infographic.svg` in any modern web browser or SVG viewer for a static visualization.
 
 ---
 
