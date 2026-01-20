@@ -239,6 +239,29 @@
       pointer-events: auto;
     }
 
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .close-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
     .info-card h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
@@ -370,6 +393,7 @@
       <h1>🇫🇷 FRENCH AI LEADERS AT DAVOS 2026</h1>
       <div class="subtitle">
         World Economic Forum • January 19-23, 2026 • 23 Companies • European Tech Leadership
+        <br><span style="font-size: 0.9rem; color: #667eea;">💡 Hover or tap on any node to see details</span>
       </div>
     </header>
 
@@ -704,6 +728,14 @@
 
     const viz = document.getElementById('viz');
     const infoCard = document.getElementById('infoCard');
+    let currentCompany = null;
+    let isTouchDevice = false;
+
+    // Detect touch device
+    window.addEventListener('touchstart', function onFirstTouch() {
+      isTouchDevice = true;
+      window.removeEventListener('touchstart', onFirstTouch);
+    }, false);
 
     // Create nodes
     companies.forEach(company => {
@@ -725,23 +757,51 @@
         node.appendChild(subtitle);
       }
 
-      // Mouse events
+      // Mouse events (desktop)
       node.addEventListener('mouseenter', (e) => {
-        showInfoCard(company, e);
+        if (!isTouchDevice) {
+          showInfoCard(company, e);
+        }
       });
 
       node.addEventListener('mousemove', (e) => {
-        updateInfoCardPosition(e);
+        if (!isTouchDevice) {
+          updateInfoCardPosition(e);
+        }
       });
 
       node.addEventListener('mouseleave', () => {
-        hideInfoCard();
+        if (!isTouchDevice) {
+          hideInfoCard();
+        }
+      });
+
+      // Touch/Click events (mobile and desktop)
+      node.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentCompany === company) {
+          // Toggle off if clicking the same node
+          hideInfoCard();
+          currentCompany = null;
+        } else {
+          // Show card for this node
+          showInfoCard(company, e, true);
+          currentCompany = company;
+        }
       });
 
       viz.appendChild(node);
     });
 
-    function showInfoCard(company, event) {
+    // Close info card when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.node') && !e.target.closest('.info-card')) {
+        hideInfoCard();
+        currentCompany = null;
+      }
+    });
+
+    function showInfoCard(company, event, isClick = false) {
       const sectorColors = {
         ai: '#667eea',
         quantum: '#f093fb',
@@ -774,6 +834,7 @@
       }
 
       infoCard.innerHTML = `
+        <div class="close-button" onclick="hideInfoCard(); currentCompany = null;">×</div>
         <h3>
           ${company.name.replace('\\n', ' ')}
         </h3>
@@ -785,26 +846,36 @@
         ${detailsHTML}
       `;
 
-      updateInfoCardPosition(event);
+      updateInfoCardPosition(event, isClick);
       infoCard.classList.add('visible');
     }
 
-    function updateInfoCardPosition(event) {
+    function updateInfoCardPosition(event, isClick = false) {
       const cardWidth = 350;
       const cardHeight = 300;
-      let x = event.clientX + 20;
-      let y = event.clientY + 20;
 
-      // Keep card on screen
-      if (x + cardWidth > window.innerWidth) {
-        x = event.clientX - cardWidth - 20;
-      }
-      if (y + cardHeight > window.innerHeight) {
-        y = window.innerHeight - cardHeight - 20;
-      }
+      // For touch/click on mobile, center the card on screen
+      if (isClick && (isTouchDevice || window.innerWidth < 768)) {
+        const x = (window.innerWidth - cardWidth) / 2;
+        const y = Math.max(100, (window.innerHeight - cardHeight) / 2);
+        infoCard.style.left = `${x}px`;
+        infoCard.style.top = `${y}px`;
+      } else {
+        // For mouse hover on desktop, follow cursor
+        let x = event.clientX + 20;
+        let y = event.clientY + 20;
 
-      infoCard.style.left = `${x}px`;
-      infoCard.style.top = `${y}px`;
+        // Keep card on screen
+        if (x + cardWidth > window.innerWidth) {
+          x = event.clientX - cardWidth - 20;
+        }
+        if (y + cardHeight > window.innerHeight) {
+          y = window.innerHeight - cardHeight - 20;
+        }
+
+        infoCard.style.left = `${x}px`;
+        infoCard.style.top = `${y}px`;
+      }
     }
 
     function hideInfoCard() {
