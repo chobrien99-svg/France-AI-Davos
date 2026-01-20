@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French AI Leaders at Davos 2026 - Interactive</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #a0aec0;
+      margin-bottom: 20px;
+    }
+
+    .theme-banners {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 1400px;
+    }
+
+    .theme-banner {
+      background: rgba(45, 55, 72, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px 30px;
+      border: 2px solid;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .theme-banner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+    }
+
+    .theme-banner.franco-german {
+      border-color: #0055A4;
+    }
+
+    .theme-banner.sovereignty {
+      border-color: #EF4135;
+    }
+
+    .theme-banner.g7 {
+      border-color: #667eea;
+    }
+
+    .theme-banner h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .theme-banner p {
+      font-size: 0.9rem;
+      color: #cbd5e0;
+    }
+
+    .visualization {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      margin: 50px auto;
+      max-width: 1600px;
+    }
+
+    .node {
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px);
+      }
+      25% {
+        transform: translateY(-15px) translateX(10px);
+      }
+      50% {
+        transform: translateY(-5px) translateX(-10px);
+      }
+      75% {
+        transform: translateY(-20px) translateX(5px);
+      }
+    }
+
+    .node:hover {
+      transform: scale(1.15) translateY(-10px) !important;
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
+      z-index: 100;
+    }
+
+    .node.center {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, #0055A4 0%, #0088FF 100%);
+      border: 4px solid #EF4135;
+      box-shadow: 0 0 50px rgba(0, 85, 164, 0.7);
+      animation: float 8s ease-in-out infinite, pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 50px rgba(0, 85, 164, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 80px rgba(0, 85, 164, 1);
+      }
+    }
+
+    .node.large {
+      width: 110px;
+      height: 110px;
+      font-size: 0.85rem;
+    }
+
+    .node.medium {
+      width: 85px;
+      height: 85px;
+      font-size: 0.75rem;
+    }
+
+    .node.small {
+      width: 70px;
+      height: 70px;
+      font-size: 0.65rem;
+    }
+
+    .node-title {
+      font-weight: bold;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+
+    .node-subtitle {
+      font-size: 0.7em;
+      opacity: 0.8;
+    }
+
+    .node.ai {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .node.quantum {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .node.space {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .node.cleantech {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .node.fintech {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .node.robotics {
+      background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .node.government {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: 2px solid #ffffff;
+    }
+
+    .info-card {
+      position: fixed;
+      background: rgba(30, 40, 60, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 25px;
+      min-width: 300px;
+      max-width: 400px;
+      border: 2px solid;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .info-card.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-card .sector-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .info-card .leader {
+      font-size: 1.1rem;
+      color: #a0aec0;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .info-card .description {
+      line-height: 1.6;
+      color: #cbd5e0;
+      margin-bottom: 15px;
+    }
+
+    .info-card .stats {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .info-card .stat {
+      background: rgba(102, 126, 234, 0.2);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    .sector-legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px auto;
+      max-width: 1400px;
+      padding: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .connection-line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(102, 126, 234, 0.3), rgba(102, 126, 234, 0));
+      transform-origin: left center;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stats-footer {
+      background: rgba(45, 55, 72, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 1400px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .stats-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #667eea;
+    }
+
+    .stats-box ul {
+      list-style: none;
+    }
+
+    .stats-box li {
+      padding: 8px 0;
+      color: #cbd5e0;
+      font-size: 0.95rem;
+    }
+
+    .stats-box li::before {
+      content: "→ ";
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .visualization {
+        height: 1200px;
+      }
+
+      .info-card {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🇫🇷 FRENCH AI LEADERS AT DAVOS 2026</h1>
+      <div class="subtitle">
+        World Economic Forum • January 19-23, 2026 • 23 Companies • European Tech Leadership
+      </div>
+    </header>
+
+    <div class="theme-banners">
+      <div class="theme-banner franco-german">
+        <h3>🇫🇷 🇩🇪 FRANCO-GERMAN</h3>
+        <p>AI &amp; Quantum Partnership</p>
+      </div>
+      <div class="theme-banner sovereignty">
+        <h3>🇪🇺 TECH SOVEREIGNTY</h3>
+        <p>vs US &amp; China Competition</p>
+      </div>
+      <div class="theme-banner g7">
+        <h3>🌐 G7 PRESIDENCY 2026</h3>
+        <p>450K jobs • 18K startups</p>
+      </div>
+    </div>
+
+    <div class="sector-legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+        <span>🤖 Artificial Intelligence</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+        <span>⚛️ Quantum Computing</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+        <span>🚀 New Space</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+        <span>🌱 Cleantech</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+        <span>💰 FinTech</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+        <span>🤖 Robotics</span>
+      </div>
+    </div>
+
+    <div class="visualization" id="viz">
+      <!-- Nodes will be dynamically added here -->
+    </div>
+
+    <div class="info-card" id="infoCard"></div>
+
+    <div class="stats-footer">
+      <div class="stats-box">
+        <h3>📊 France Tech Ecosystem</h3>
+        <ul>
+          <li>23 Companies at Davos</li>
+          <li>18,000+ Startups Nationally</li>
+          <li>450,000 Tech Sector Jobs</li>
+          <li>France's only AI Decacorn: Mistral AI</li>
+        </ul>
+      </div>
+      <div class="stats-box">
+        <h3>🌍 Global AI Competition</h3>
+        <ul>
+          <li>🇺🇸 US: OpenAI, NVIDIA, Microsoft, Anthropic</li>
+          <li>🇨🇳 China: DeepSeek challenging monopoly</li>
+          <li>🇫🇷 France: Mistral AI leading EU response</li>
+          <li>64 Heads of State attending</li>
+        </ul>
+      </div>
+      <div class="stats-box">
+        <h3>🗓️ Business France Events</h3>
+        <ul>
+          <li>Jan 20: AI &amp; Deeptech Lunch</li>
+          <li>Jan 21: Cleantech &amp; Green Industry</li>
+          <li>Jan 22: New Space &amp; Strategy</li>
+          <li>Soirée France: 120+ Participants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const companies = [
+      // Center - President Macron
+      {
+        name: "EMMANUEL\nMACRON",
+        subtitle: "President of France",
+        sector: "center",
+        size: "center",
+        x: 50,
+        y: 50,
+        description: "Leading France's largest tech delegation ever to Davos, emphasizing Franco-German cooperation and European tech sovereignty.",
+        details: ["64 heads of state attending", "Leading 23 French companies", "Focus on G7 Presidency 2026"],
+        animDelay: 0
+      },
+
+      // AI Sector (Left side)
+      {
+        name: "MISTRAL AI",
+        subtitle: "Arthur Mensch",
+        sector: "ai",
+        size: "large",
+        x: 15,
+        y: 25,
+        description: "France's only decacorn (€10B+ valuation), competing directly with OpenAI in generative AI models.",
+        details: ["🦄 Decacorn status", "Generative AI models", "European AI champion"],
+        animDelay: 0.5
+      },
+      {
+        name: "H Company",
+        subtitle: "Gauthier Cloix",
+        sector: "ai",
+        size: "medium",
+        x: 10,
+        y: 50,
+        description: "Specializing in agentic AI - autonomous AI agents that can perform complex tasks independently.",
+        details: ["Agentic AI platform", "Autonomous systems", "Enterprise applications"],
+        animDelay: 1
+      },
+      {
+        name: "Bioptimus",
+        subtitle: "",
+        sector: "ai",
+        size: "medium",
+        x: 18,
+        y: 65,
+        description: "Applying cutting-edge artificial intelligence to biological sciences and drug discovery.",
+        details: ["AI + Biology", "Drug discovery", "Biotech innovation"],
+        animDelay: 1.5
+      },
+      {
+        name: "Safran.AI",
+        subtitle: "",
+        sector: "ai",
+        size: "small",
+        x: 8,
+        y: 38,
+        description: "Defense-focused AI subsidiary of Safran Group, integrating AI into aerospace and defense systems.",
+        details: ["Defense AI", "Aerospace applications", "Critical systems"],
+        animDelay: 2
+      },
+      {
+        name: "Sekoia.io",
+        subtitle: "",
+        sector: "ai",
+        size: "small",
+        x: 5,
+        y: 60,
+        description: "Cybersecurity platform using AI to detect and respond to cyber threats in real-time.",
+        details: ["Cyber AI", "Threat detection", "Security operations"],
+        animDelay: 2.5
+      },
+      {
+        name: "Pelico",
+        subtitle: "",
+        sector: "ai",
+        size: "small",
+        x: 12,
+        y: 75,
+        description: "AI-powered manufacturing orchestration platform for factory optimization and resilience.",
+        details: ["Manufacturing AI", "Factory optimization", "Supply chain"],
+        animDelay: 3
+      },
+
+      // Quantum Computing (Right top)
+      {
+        name: "QUANDELA",
+        subtitle: "Niccolò Somaschi",
+        sector: "quantum",
+        size: "large",
+        x: 85,
+        y: 25,
+        description: "Building photonic quantum computers, critical for European quantum sovereignty and Franco-German cooperation.",
+        details: ["Quantum hardware", "Photonic computing", "European sovereignty"],
+        animDelay: 0.7
+      },
+      {
+        name: "QUOBLY",
+        subtitle: "Maud Vinet",
+        sector: "quantum",
+        size: "medium",
+        x: 92,
+        y: 40,
+        description: "Developing quantum computing applications and algorithms for practical use cases.",
+        details: ["Quantum applications", "Algorithm development", "Practical quantum"],
+        animDelay: 1.2
+      },
+
+      // Space Sector (Right bottom)
+      {
+        name: "EXOTRAIL",
+        subtitle: "",
+        sector: "space",
+        size: "medium",
+        x: 85,
+        y: 70,
+        description: "In-space manufacturing and satellite propulsion systems for the new space economy.",
+        details: ["Space manufacturing", "Propulsion systems", "New Space"],
+        animDelay: 1.8
+      },
+      {
+        name: "ALDORIA",
+        subtitle: "",
+        sector: "space",
+        size: "medium",
+        x: 92,
+        y: 82,
+        description: "Satellite systems and space technology for European strategic autonomy.",
+        details: ["Satellite systems", "Space infrastructure", "European autonomy"],
+        animDelay: 2.3
+      },
+      {
+        name: "Exploration Co",
+        subtitle: "",
+        sector: "space",
+        size: "small",
+        x: 88,
+        y: 60,
+        description: "Commercial space exploration and technology development.",
+        details: ["Space exploration", "Commercial space", "Innovation"],
+        animDelay: 2.8
+      },
+      {
+        name: "EUTELSAT",
+        subtitle: "",
+        sector: "space",
+        size: "small",
+        x: 95,
+        y: 70,
+        description: "Established satellite operator providing space infrastructure and connectivity.",
+        details: ["Satellite operations", "Space infrastructure", "Established operator"],
+        animDelay: 3.3
+      },
+
+      // Cleantech (Left bottom)
+      {
+        name: "VERKOR",
+        subtitle: "Benoît Lemaignan",
+        sector: "cleantech",
+        size: "medium",
+        x: 18,
+        y: 82,
+        description: "Electric vehicle battery manufacturing, crucial for European automotive independence and green transition.",
+        details: ["EV batteries", "Green transition", "Supply chain sovereignty"],
+        animDelay: 1.3
+      },
+      {
+        name: "DIOXYCLE",
+        subtitle: "",
+        sector: "cleantech",
+        size: "small",
+        x: 8,
+        y: 85,
+        description: "Deep-tech industrial recycling and circular economy solutions using advanced technologies.",
+        details: ["Industrial recycling", "Circular economy", "Sustainability"],
+        animDelay: 2.6
+      },
+      {
+        name: "Sweetch Energy",
+        subtitle: "",
+        sector: "cleantech",
+        size: "small",
+        x: 12,
+        y: 92,
+        description: "Osmotic energy generation technology for renewable power.",
+        details: ["Osmotic energy", "Renewable power", "Innovation"],
+        animDelay: 3.1
+      },
+
+      // FinTech (Bottom center-left)
+      {
+        name: "PIGMENT",
+        subtitle: "Éléonore Crespo",
+        sector: "fintech",
+        size: "medium",
+        x: 35,
+        y: 90,
+        description: "AI-powered financial planning and forecasting platform for enterprise CFOs.",
+        details: ["Financial planning", "Enterprise software", "AI forecasting"],
+        animDelay: 1.6
+      },
+      {
+        name: "QONTO",
+        subtitle: "Alexandre Prot",
+        sector: "fintech",
+        size: "medium",
+        x: 45,
+        y: 92,
+        description: "Digital banking and business financial services, a scaled European fintech success.",
+        details: ["Digital banking", "Business services", "European fintech"],
+        animDelay: 2.1
+      },
+      {
+        name: "LEDGER",
+        subtitle: "",
+        sector: "fintech",
+        size: "small",
+        x: 28,
+        y: 95,
+        description: "Cryptocurrency hardware wallet and blockchain infrastructure security.",
+        details: ["Crypto security", "Hardware wallets", "Blockchain"],
+        animDelay: 2.9
+      },
+
+      // Robotics (Bottom center-right)
+      {
+        name: "EXOTEC",
+        subtitle: "Romain Moulin",
+        sector: "robotics",
+        size: "medium",
+        x: 65,
+        y: 90,
+        description: "Autonomous robotics for warehouse automation and logistics optimization.",
+        details: ["Warehouse robotics", "Automation", "Industrial logistics"],
+        animDelay: 1.9
+      },
+
+      // Government (Right side)
+      {
+        name: "GOVERNMENT",
+        subtitle: "Julie Huguet\nPascal Cagni",
+        sector: "government",
+        size: "medium",
+        x: 75,
+        y: 50,
+        description: "French Tech Mission and Business France coordinating delegation strategy and networking.",
+        details: ["Julie Huguet: Director, French Tech", "Pascal Cagni: Ambassador, Business France", "3 thematic lunches"],
+        animDelay: 1.4
+      }
+    ];
+
+    const viz = document.getElementById('viz');
+    const infoCard = document.getElementById('infoCard');
+
+    // Create nodes
+    companies.forEach(company => {
+      const node = document.createElement('div');
+      node.className = `node ${company.sector} ${company.size}`;
+      node.style.left = `${company.x}%`;
+      node.style.top = `${company.y}%`;
+      node.style.animationDelay = `${company.animDelay}s`;
+
+      const title = document.createElement('div');
+      title.className = 'node-title';
+      title.textContent = company.name.replace('\\n', ' ');
+      node.appendChild(title);
+
+      if (company.subtitle) {
+        const subtitle = document.createElement('div');
+        subtitle.className = 'node-subtitle';
+        subtitle.textContent = company.subtitle.replace('\\n', ' ');
+        node.appendChild(subtitle);
+      }
+
+      // Mouse events
+      node.addEventListener('mouseenter', (e) => {
+        showInfoCard(company, e);
+      });
+
+      node.addEventListener('mousemove', (e) => {
+        updateInfoCardPosition(e);
+      });
+
+      node.addEventListener('mouseleave', () => {
+        hideInfoCard();
+      });
+
+      viz.appendChild(node);
+    });
+
+    function showInfoCard(company, event) {
+      const sectorColors = {
+        ai: '#667eea',
+        quantum: '#f093fb',
+        space: '#4facfe',
+        cleantech: '#43e97b',
+        fintech: '#fa709a',
+        robotics: '#30cfd0',
+        government: '#667eea',
+        center: '#0055A4'
+      };
+
+      const sectorNames = {
+        ai: 'Artificial Intelligence',
+        quantum: 'Quantum Computing',
+        space: 'New Space',
+        cleantech: 'Cleantech',
+        fintech: 'FinTech',
+        robotics: 'Robotics',
+        government: 'Government',
+        center: 'Political Leadership'
+      };
+
+      infoCard.style.borderColor = sectorColors[company.sector];
+
+      let detailsHTML = '';
+      if (company.details && company.details.length > 0) {
+        detailsHTML = '<div class="stats">' +
+          company.details.map(d => `<div class="stat">${d}</div>`).join('') +
+          '</div>';
+      }
+
+      infoCard.innerHTML = `
+        <h3>
+          ${company.name.replace('\\n', ' ')}
+        </h3>
+        ${company.subtitle ? `<div class="leader">👤 ${company.subtitle.replace('\\n', ' ')}</div>` : ''}
+        <div class="sector-badge" style="background: ${sectorColors[company.sector]}">
+          ${sectorNames[company.sector]}
+        </div>
+        <div class="description">${company.description}</div>
+        ${detailsHTML}
+      `;
+
+      updateInfoCardPosition(event);
+      infoCard.classList.add('visible');
+    }
+
+    function updateInfoCardPosition(event) {
+      const cardWidth = 350;
+      const cardHeight = 300;
+      let x = event.clientX + 20;
+      let y = event.clientY + 20;
+
+      // Keep card on screen
+      if (x + cardWidth > window.innerWidth) {
+        x = event.clientX - cardWidth - 20;
+      }
+      if (y + cardHeight > window.innerHeight) {
+        y = window.innerHeight - cardHeight - 20;
+      }
+
+      infoCard.style.left = `${x}px`;
+      infoCard.style.top = `${y}px`;
+    }
+
+    function hideInfoCard() {
+      infoCard.classList.remove('visible');
+    }
+
+    // Add some connection lines between center and major nodes
+    const centerNode = companies[0];
+    const majorCompanies = companies.filter(c => c.size === 'large');
+
+    majorCompanies.forEach(company => {
+      const line = document.createElement('div');
+      line.className = 'connection-line';
+
+      const x1 = centerNode.x;
+      const y1 = centerNode.y;
+      const x2 = company.x;
+      const y2 = company.y;
+
+      const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+      const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+
+      line.style.width = `${length}%`;
+      line.style.left = `${x1}%`;
+      line.style.top = `${y1}%`;
+      line.style.transform = `rotate(${angle}deg)`;
+      line.style.opacity = '0.2';
+
+      viz.insertBefore(line, viz.firstChild);
+    });
+  </script>
+</body>
+</html>
