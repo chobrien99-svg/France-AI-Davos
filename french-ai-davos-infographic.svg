@@ -63,25 +63,25 @@
 
   <!-- Connection lines (background) -->
   <!-- AI sector connections -->
-  <line x1="960" y1="300" x2="350" y2="280" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="450" y2="380" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="380" y2="500" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="300" y2="240" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="490" y2="390" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="420" y2="540" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Quantum connections -->
-  <line x1="960" y1="300" x2="1570" y2="280" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="1480" y2="390" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1630" y2="250" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1460" y2="410" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Space connections -->
-  <line x1="960" y1="300" x2="1570" y2="500" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="1500" y2="600" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1630" y2="480" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="1470" y2="600" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Cleantech connections -->
-  <line x1="960" y1="300" x2="300" y2="670" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="400" y2="740" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="270" y2="650" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="430" y2="760" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- FinTech connections -->
-  <line x1="960" y1="300" x2="650" y2="800" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="800" y2="850" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="680" y2="820" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="300" x2="850" y2="870" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Robotics connections -->
   <line x1="960" y1="300" x2="1100" y2="820" stroke="url(#roboticsGradient)" stroke-width="2" opacity="0.3"/>
@@ -132,200 +132,200 @@
 
   <!-- AI SECTOR (Left side) -->
   <g id="ai-sector">
-    <circle cx="350" cy="280" r="58" fill="url(#aiGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="350" y="274" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="300" cy="240" r="58" fill="url(#aiGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="300" y="234" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
       MISTRAL AI
     </text>
-    <text x="350" y="289" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    <text x="300" y="249" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
       Arthur Mensch
     </text>
-    <text x="350" y="304" font-family="Arial, sans-serif" font-size="9" fill="#cbd5e0" text-anchor="middle">
+    <text x="300" y="264" font-family="Arial, sans-serif" font-size="9" fill="#cbd5e0" text-anchor="middle">
       🦄 Decacorn
     </text>
 
-    <circle cx="450" cy="380" r="42" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="450" y="380" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="490" cy="390" r="42" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="490" y="390" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
       H Company
     </text>
-    <text x="450" y="395" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
+    <text x="490" y="405" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
       Gauthier Cloix
     </text>
-    <text x="450" y="408" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+    <text x="490" y="418" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
       Agentic AI
     </text>
 
-    <circle cx="380" cy="500" r="40" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="380" y="498" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="420" cy="540" r="40" fill="url(#aiGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="420" y="538" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Bioptimus
     </text>
-    <text x="380" y="511" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+    <text x="420" y="551" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
       AI + Biology
     </text>
 
-    <circle cx="250" cy="350" r="37" fill="url(#aiGradient)" opacity="0.7" filter="url(#glow)"/>
-    <text x="250" y="350" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="190" cy="370" r="37" fill="url(#aiGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="190" y="370" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Safran.AI
     </text>
-    <text x="250" y="363" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+    <text x="190" y="383" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
       Defense AI
     </text>
 
-    <circle cx="300" cy="440" r="34" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
-    <text x="300" y="440" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="260" cy="480" r="34" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
+    <text x="260" y="480" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Sekoia.io
     </text>
-    <text x="300" y="452" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+    <text x="260" y="492" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
       Cybersecurity
     </text>
 
-    <circle cx="350" cy="580" r="32" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
-    <text x="350" y="580" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="300" cy="630" r="32" fill="url(#aiGradient)" opacity="0.65" filter="url(#glow)"/>
+    <text x="300" y="630" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Pelico
     </text>
-    <text x="350" y="592" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+    <text x="300" y="642" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
       Mfg AI
     </text>
 
-    <text x="350" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#667eea" text-anchor="middle">
+    <text x="320" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#667eea" text-anchor="middle">
       🤖 ARTIFICIAL INTELLIGENCE
     </text>
   </g>
 
   <!-- QUANTUM SECTOR (Right top) -->
   <g id="quantum-sector">
-    <circle cx="1570" cy="280" r="53" fill="url(#quantumGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="1570" y="274" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1630" cy="250" r="53" fill="url(#quantumGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="1630" y="244" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
       QUANDELA
     </text>
-    <text x="1570" y="289" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+    <text x="1630" y="259" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
       Niccolò Somaschi
     </text>
-    <text x="1570" y="302" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+    <text x="1630" y="272" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
       Quantum Computing
     </text>
 
-    <circle cx="1480" cy="390" r="47" fill="url(#quantumGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="1480" y="387" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1460" cy="410" r="47" fill="url(#quantumGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="1460" y="407" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
       QUOBLY
     </text>
-    <text x="1480" y="401" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
+    <text x="1460" y="421" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">
       Maud Vinet
     </text>
-    <text x="1480" y="414" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+    <text x="1460" y="434" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
       Quantum Apps
     </text>
 
-    <text x="1570" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f093fb" text-anchor="middle">
+    <text x="1600" y="190" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f093fb" text-anchor="middle">
       ⚛️ QUANTUM COMPUTING
     </text>
   </g>
 
   <!-- SPACE SECTOR (Right bottom) -->
   <g id="space-sector">
-    <circle cx="1570" cy="500" r="47" fill="url(#spaceGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="1570" y="498" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1630" cy="480" r="47" fill="url(#spaceGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="1630" y="478" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
       EXOTRAIL
     </text>
-    <text x="1570" y="512" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+    <text x="1630" y="492" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
       In-space Mfg
     </text>
 
-    <circle cx="1500" cy="600" r="44" fill="url(#spaceGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="1500" y="598" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1470" cy="600" r="44" fill="url(#spaceGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="1470" y="598" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
       ALDORIA
     </text>
-    <text x="1500" y="611" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
+    <text x="1470" y="611" font-family="Arial, sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">
       Satellites
     </text>
 
-    <circle cx="1620" cy="640" r="40" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
-    <text x="1620" y="637" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1670" cy="660" r="40" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="1670" y="657" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Exploration
     </text>
-    <text x="1620" y="648" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <text x="1670" y="668" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Company
     </text>
 
-    <circle cx="1450" cy="690" r="37" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
-    <text x="1450" y="690" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="1400" cy="720" r="37" fill="url(#spaceGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="1400" y="720" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
       EUTELSAT
     </text>
-    <text x="1450" y="702" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
+    <text x="1400" y="732" font-family="Arial, sans-serif" font-size="7" fill="#e2e8f0" text-anchor="middle">
       Infrastructure
     </text>
 
-    <text x="1550" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4facfe" text-anchor="middle">
+    <text x="1580" y="420" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4facfe" text-anchor="middle">
       🚀 NEW SPACE
     </text>
   </g>
 
   <!-- CLEANTECH SECTOR (Left bottom) -->
   <g id="cleantech-sector">
-    <circle cx="300" cy="670" r="50" fill="url(#cleantechGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="300" y="665" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="270" cy="650" r="50" fill="url(#cleantechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="270" y="645" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
       VERKOR
     </text>
-    <text x="300" y="679" font-family="Arial, sans-serif" font-size="10" fill="#1a202c" text-anchor="middle">
+    <text x="270" y="659" font-family="Arial, sans-serif" font-size="10" fill="#1a202c" text-anchor="middle">
       Benoît Lemaignan
     </text>
-    <text x="300" y="692" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+    <text x="270" y="672" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
       EV Batteries
     </text>
 
-    <circle cx="400" cy="740" r="42" fill="url(#cleantechGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="400" y="738" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="430" cy="760" r="42" fill="url(#cleantechGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="430" y="758" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
       DIOXYCLE
     </text>
-    <text x="400" y="752" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
+    <text x="430" y="772" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
       Recycling Tech
     </text>
 
-    <circle cx="250" cy="780" r="38" fill="url(#cleantechGradient)" opacity="0.7" filter="url(#glow)"/>
-    <text x="250" y="777" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="220" cy="810" r="38" fill="url(#cleantechGradient)" opacity="0.7" filter="url(#glow)"/>
+    <text x="220" y="807" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Sweetch
     </text>
-    <text x="250" y="789" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <text x="220" y="819" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
       Energy
     </text>
 
-    <text x="320" y="620" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#43e97b" text-anchor="middle">
+    <text x="310" y="590" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#43e97b" text-anchor="middle">
       🌱 CLEANTECH
     </text>
   </g>
 
   <!-- FINTECH SECTOR (Bottom center-left) -->
   <g id="fintech-sector">
-    <circle cx="650" cy="800" r="50" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="650" y="795" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="680" cy="820" r="50" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="680" y="815" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
       PIGMENT
     </text>
-    <text x="650" y="809" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
+    <text x="680" y="829" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
       Éléonore Crespo
     </text>
-    <text x="650" y="822" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+    <text x="680" y="842" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
       Financial Planning
     </text>
 
-    <circle cx="800" cy="850" r="50" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
-    <text x="800" y="845" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="850" cy="870" r="50" fill="url(#fintechGradient)" opacity="0.85" filter="url(#glow)"/>
+    <text x="850" y="865" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
       QONTO
     </text>
-    <text x="800" y="859" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
+    <text x="850" y="879" font-family="Arial, sans-serif" font-size="9" fill="#1a202c" text-anchor="middle">
       Alexandre Prot
     </text>
-    <text x="800" y="872" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
+    <text x="850" y="892" font-family="Arial, sans-serif" font-size="8" fill="#2d3748" text-anchor="middle">
       Digital Banking
     </text>
 
-    <circle cx="580" cy="880" r="40" fill="url(#fintechGradient)" opacity="0.75" filter="url(#glow)"/>
-    <text x="580" y="880" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="540" cy="900" r="40" fill="url(#fintechGradient)" opacity="0.75" filter="url(#glow)"/>
+    <text x="540" y="900" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
       LEDGER
     </text>
-    <text x="580" y="893" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
+    <text x="540" y="913" font-family="Arial, sans-serif" font-size="8" fill="#1a202c" text-anchor="middle">
       Crypto Security
     </text>
 
-    <text x="680" y="750" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fa709a" text-anchor="middle">
+    <text x="710" y="760" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fa709a" text-anchor="middle">
       💰 FINTECH
     </text>
   </g>
