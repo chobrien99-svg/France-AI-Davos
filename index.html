@@ -216,6 +216,7 @@
     .node.government {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border: 2px solid #ffffff;
+      font-size: 0.935rem;
     }
 
     .info-card {
@@ -485,7 +486,7 @@
         sector: "center",
         size: "center",
         x: 50,
-        y: 30,
+        y: 14,
         description: "Leading France's largest tech delegation ever to Davos, emphasizing Franco-German cooperation and European tech sovereignty.",
         details: ["64 heads of state attending", "Leading 23 French companies", "Focus on G7 Presidency 2026"],
         animDelay: 0
@@ -717,7 +718,7 @@
         name: "GOVERNMENT",
         subtitle: "Julie Huguet\nPascal Cagni",
         sector: "government",
-        size: "medium",
+        size: "large",
         x: 72,
         y: 30,
         description: "French Tech Mission and Business France coordinating delegation strategy and networking.",
@@ -747,13 +748,13 @@
 
       const title = document.createElement('div');
       title.className = 'node-title';
-      title.textContent = company.name.replace('\\n', ' ');
+      title.innerHTML = company.name.replace(/\\n/g, '<br>');
       node.appendChild(title);
 
       if (company.subtitle) {
         const subtitle = document.createElement('div');
         subtitle.className = 'node-subtitle';
-        subtitle.textContent = company.subtitle.replace('\\n', ' ');
+        subtitle.innerHTML = company.subtitle.replace(/\\n/g, '<br>');
         node.appendChild(subtitle);
       }
 
@@ -836,9 +837,9 @@
       infoCard.innerHTML = `
         <div class="close-button" onclick="hideInfoCard(); currentCompany = null;">×</div>
         <h3>
-          ${company.name.replace('\\n', ' ')}
+          ${company.name.replace(/\\n/g, '<br>')}
         </h3>
-        ${company.subtitle ? `<div class="leader">👤 ${company.subtitle.replace('\\n', ' ')}</div>` : ''}
+        ${company.subtitle ? `<div class="leader">👤 ${company.subtitle.replace(/\\n/g, '<br>')}</div>` : ''}
         <div class="sector-badge" style="background: ${sectorColors[company.sector]}">
           ${sectorNames[company.sector]}
         </div>
