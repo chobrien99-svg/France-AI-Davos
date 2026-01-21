@@ -748,13 +748,13 @@
 
       const title = document.createElement('div');
       title.className = 'node-title';
-      title.innerHTML = company.name.replace(/\\n/g, '<br>');
+      title.innerHTML = company.name.replace(/\n/g, '<br>');
       node.appendChild(title);
 
       if (company.subtitle) {
         const subtitle = document.createElement('div');
         subtitle.className = 'node-subtitle';
-        subtitle.innerHTML = company.subtitle.replace(/\\n/g, '<br>');
+        subtitle.innerHTML = company.subtitle.replace(/\n/g, '<br>');
         node.appendChild(subtitle);
       }
 
@@ -837,9 +837,9 @@
       infoCard.innerHTML = `
         <div class="close-button" onclick="hideInfoCard(); currentCompany = null;">×</div>
         <h3>
-          ${company.name.replace(/\\n/g, '<br>')}
+          ${company.name.replace(/\n/g, '<br>')}
         </h3>
-        ${company.subtitle ? `<div class="leader">👤 ${company.subtitle.replace(/\\n/g, '<br>')}</div>` : ''}
+        ${company.subtitle ? `<div class="leader">👤 ${company.subtitle.replace(/\n/g, '<br>')}</div>` : ''}
         <div class="sector-badge" style="background: ${sectorColors[company.sector]}">
           ${sectorNames[company.sector]}
         </div>
