@@ -63,39 +63,39 @@
 
   <!-- Connection lines (background) -->
   <!-- AI sector connections -->
-  <line x1="960" y1="300" x2="450" y2="200" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="350" y2="300" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="400" y2="400" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="450" y2="200" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="350" y2="300" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="400" y2="400" stroke="url(#aiGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Quantum connections -->
-  <line x1="960" y1="300" x2="1470" y2="200" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="1570" y2="300" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="1470" y2="200" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="1570" y2="300" stroke="url(#quantumGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Space connections -->
-  <line x1="960" y1="300" x2="1470" y2="600" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="1570" y2="700" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="1470" y2="600" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="1570" y2="700" stroke="url(#spaceGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Cleantech connections -->
-  <line x1="960" y1="300" x2="450" y2="600" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="350" y2="700" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="450" y2="600" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="350" y2="700" stroke="url(#cleantechGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- FinTech connections -->
-  <line x1="960" y1="300" x2="750" y2="850" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
-  <line x1="960" y1="300" x2="950" y2="900" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="750" y2="850" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="950" y2="900" stroke="url(#fintechGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Robotics connections -->
-  <line x1="960" y1="300" x2="1170" y2="850" stroke="url(#roboticsGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="960" y1="180" x2="1170" y2="850" stroke="url(#roboticsGradient)" stroke-width="2" opacity="0.3"/>
 
   <!-- Central node: Emmanuel Macron & France -->
-  <circle cx="960" cy="300" r="80" fill="url(#frenchBlue)" filter="url(#strongGlow)" opacity="0.9"/>
-  <circle cx="960" cy="300" r="70" fill="none" stroke="url(#frenchRed)" stroke-width="3" opacity="0.8"/>
-  <text x="960" y="290" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+  <circle cx="960" cy="180" r="80" fill="url(#frenchBlue)" filter="url(#strongGlow)" opacity="0.9"/>
+  <circle cx="960" cy="180" r="70" fill="none" stroke="url(#frenchRed)" stroke-width="3" opacity="0.8"/>
+  <text x="960" y="170" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
     EMMANUEL
   </text>
-  <text x="960" y="310" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+  <text x="960" y="190" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
     MACRON
   </text>
-  <text x="960" y="330" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+  <text x="960" y="210" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
     President
   </text>
 
@@ -350,20 +350,20 @@
 
   <!-- Government Leadership (right side) -->
   <g id="leadership">
-    <rect x="1350" y="380" width="200" height="90" rx="8" fill="#2d3748" opacity="0.9" stroke="#667eea" stroke-width="2"/>
-    <text x="1450" y="400" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <rect x="1330" y="370" width="240" height="110" rx="8" fill="#2d3748" opacity="0.9" stroke="#667eea" stroke-width="2"/>
+    <text x="1450" y="395" font-family="Arial, sans-serif" font-size="11.6" font-weight="bold" fill="#ffffff" text-anchor="middle">
       🏛️ GOVERNMENT
     </text>
-    <text x="1450" y="420" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+    <text x="1450" y="418" font-family="Arial, sans-serif" font-size="10.5" fill="#e2e8f0" text-anchor="middle">
       Julie Huguet
     </text>
-    <text x="1450" y="435" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+    <text x="1450" y="435" font-family="Arial, sans-serif" font-size="8.4" fill="#cbd5e0" text-anchor="middle">
       Director, French Tech
     </text>
-    <text x="1450" y="453" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0" text-anchor="middle">
+    <text x="1450" y="455" font-family="Arial, sans-serif" font-size="10.5" fill="#e2e8f0" text-anchor="middle">
       Pascal Cagni
     </text>
-    <text x="1450" y="467" font-family="Arial, sans-serif" font-size="8" fill="#cbd5e0" text-anchor="middle">
+    <text x="1450" y="472" font-family="Arial, sans-serif" font-size="8.4" fill="#cbd5e0" text-anchor="middle">
       Ambassador, Business France
     </text>
   </g>
