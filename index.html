@@ -861,22 +861,11 @@
         node.appendChild(subtitle);
       }
 
-      // Mouse events (desktop)
+      // Mouse events (desktop) - open on hover
       node.addEventListener('mouseenter', (e) => {
         if (!isTouchDevice) {
           showInfoCard(company, e);
-        }
-      });
-
-      node.addEventListener('mousemove', (e) => {
-        if (!isTouchDevice) {
-          updateInfoCardPosition(e);
-        }
-      });
-
-      node.addEventListener('mouseleave', () => {
-        if (!isTouchDevice) {
-          hideInfoCard();
+          currentCompany = company;
         }
       });
 
@@ -897,7 +886,12 @@
       viz.appendChild(node);
     });
 
-    // Close info card when clicking outside
+    // Prevent info card from closing when clicking inside it
+    infoCard.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Close info card when clicking outside (on the background)
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.node') && !e.target.closest('.info-card')) {
         hideInfoCard();
@@ -943,7 +937,7 @@
       }
 
       infoCard.innerHTML = `
-        <div class="close-button" onclick="hideInfoCard(); currentCompany = null;">×</div>
+        <div class="close-button" onclick="hideInfoCard(); currentCompany = null; event.stopPropagation();">×</div>
         <h3>
           ${company.name.replace(/\n/g, '<br>')}
         </h3>
