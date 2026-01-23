@@ -224,9 +224,11 @@
       background: rgba(30, 40, 60, 0.95);
       backdrop-filter: blur(20px);
       border-radius: 20px;
-      padding: 25px;
-      min-width: 300px;
-      max-width: 400px;
+      padding: 30px;
+      min-width: 400px;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
       border: 2px solid;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
       z-index: 1000;
@@ -305,6 +307,59 @@
       padding: 8px 12px;
       border-radius: 8px;
       font-size: 0.85rem;
+    }
+
+    .info-card .news-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-card .news-headline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .info-card .news-content {
+      line-height: 1.8;
+      color: #cbd5e0;
+      margin-bottom: 15px;
+    }
+
+    .info-card .card-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 15px 0;
+      object-fit: cover;
+      max-height: 300px;
+    }
+
+    .info-card .news-links {
+      margin-top: 15px;
+    }
+
+    .info-card .news-link {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 10px 20px;
+      background: rgba(102, 126, 234, 0.3);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(102, 126, 234, 0.5);
+    }
+
+    .info-card .news-link:hover {
+      background: rgba(102, 126, 234, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
     }
 
     .sector-legend {
@@ -488,7 +543,7 @@
       <h1>🇫🇷 FRENCH AI LEADERS AT DAVOS 2026</h1>
       <div class="subtitle">
         World Economic Forum • January 19-23, 2026 • 23 Companies • European Tech Leadership
-        <br><span style="font-size: 0.9rem; color: #667eea;">💡 Hover or tap on any node to see details</span>
+        <br><span style="font-size: 0.9rem; color: #667eea;">💡 Click on any node to see details</span>
       </div>
     </header>
 
@@ -592,7 +647,14 @@
         details: ["64 heads of state attending", "Leading 23 French companies", "Focus on G7 Presidency 2026"],
         animDelay: 0,
         videoUrl: "https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2026/sessions/special-address-by-emmanuel-macron-president-of-france-fe783bf5fe/",
-        hasVideo: true
+        hasVideo: true,
+        image: "https://images.unsplash.com/photo-1464047736614-af63643285bf?w=800&q=80",
+        newsHeadline: "📰 Emmanuel Macron at Davos 2026: Speech, Sunglasses and Summit Highlights",
+        newsContent: "French President Emmanuel Macron delivered a major speech at the World Economic Forum (WEF) in Davos on January 20, 2026, focusing on global geopolitical trends and the need for renewed cooperation among nations in an increasingly unstable world. In his address, he warned of a \"shift towards a world without rules\" — arguing that international law and norms are being eroded and that democratic nations must strengthen multilateral institutions and frameworks to resist unilateral power politics.",
+        newsLinks: [
+          { text: "Read Full Speech", url: "https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2026/" },
+          { text: "France at Davos 2026", url: "https://www.businessfrance.fr/davos" }
+        ]
       },
 
       // AI Sector (Left side)
@@ -861,15 +923,7 @@
         node.appendChild(subtitle);
       }
 
-      // Mouse events (desktop) - open on hover
-      node.addEventListener('mouseenter', (e) => {
-        if (!isTouchDevice) {
-          showInfoCard(company, e);
-          currentCompany = company;
-        }
-      });
-
-      // Touch/Click events (mobile and desktop)
+      // Click events only - open info card on click
       node.addEventListener('click', (e) => {
         e.stopPropagation();
         if (currentCompany === company) {
@@ -936,6 +990,34 @@
         videoButtonHTML = `<a href="${company.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-button" onclick="event.stopPropagation();">Watch Davos Speech</a>`;
       }
 
+      let imageHTML = '';
+      if (company.image) {
+        imageHTML = `<img src="${company.image}" alt="${company.name}" class="card-image">`;
+      }
+
+      let newsHTML = '';
+      if (company.newsHeadline || company.newsContent || company.newsLinks) {
+        newsHTML = '<div class="news-section">';
+
+        if (company.newsHeadline) {
+          newsHTML += `<div class="news-headline">${company.newsHeadline}</div>`;
+        }
+
+        if (company.newsContent) {
+          newsHTML += `<div class="news-content">${company.newsContent}</div>`;
+        }
+
+        if (company.newsLinks && company.newsLinks.length > 0) {
+          newsHTML += '<div class="news-links">';
+          company.newsLinks.forEach(link => {
+            newsHTML += `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="news-link" onclick="event.stopPropagation();">${link.text}</a>`;
+          });
+          newsHTML += '</div>';
+        }
+
+        newsHTML += '</div>';
+      }
+
       infoCard.innerHTML = `
         <div class="close-button" onclick="hideInfoCard(); currentCompany = null; event.stopPropagation();">×</div>
         <h3>
@@ -945,9 +1027,11 @@
         <div class="sector-badge" style="background: ${sectorColors[company.sector]}">
           ${sectorNames[company.sector]}
         </div>
+        ${imageHTML}
         <div class="description">${company.description}</div>
         ${detailsHTML}
         ${videoButtonHTML}
+        ${newsHTML}
       `;
 
       updateInfoCardPosition(event, isClick);
@@ -955,31 +1039,14 @@
     }
 
     function updateInfoCardPosition(event, isClick = false) {
-      const cardWidth = 350;
-      const cardHeight = 300;
+      const cardWidth = 700;
+      const cardHeight = 500;
 
-      // For touch/click on mobile, center the card on screen
-      if (isClick && (isTouchDevice || window.innerWidth < 768)) {
-        const x = (window.innerWidth - cardWidth) / 2;
-        const y = Math.max(100, (window.innerHeight - cardHeight) / 2);
-        infoCard.style.left = `${x}px`;
-        infoCard.style.top = `${y}px`;
-      } else {
-        // For mouse hover on desktop, follow cursor
-        let x = event.clientX + 20;
-        let y = event.clientY + 20;
-
-        // Keep card on screen
-        if (x + cardWidth > window.innerWidth) {
-          x = event.clientX - cardWidth - 20;
-        }
-        if (y + cardHeight > window.innerHeight) {
-          y = window.innerHeight - cardHeight - 20;
-        }
-
-        infoCard.style.left = `${x}px`;
-        infoCard.style.top = `${y}px`;
-      }
+      // Always center the card on screen for click interactions
+      const x = Math.max(20, (window.innerWidth - cardWidth) / 2);
+      const y = Math.max(20, (window.innerHeight - cardHeight) / 2);
+      infoCard.style.left = `${x}px`;
+      infoCard.style.top = `${y}px`;
     }
 
     function hideInfoCard() {
