@@ -933,7 +933,7 @@
 
       let videoButtonHTML = '';
       if (company.hasVideo && company.videoUrl) {
-        videoButtonHTML = `<button class="video-button" onclick="openVideoModal('${company.videoUrl}'); event.stopPropagation();">Watch Davos Speech</button>`;
+        videoButtonHTML = `<a href="${company.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-button" onclick="event.stopPropagation();">Watch Davos Speech</a>`;
       }
 
       infoCard.innerHTML = `
