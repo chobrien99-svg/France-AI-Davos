@@ -338,6 +338,87 @@
       max-height: 300px;
     }
 
+    .info-card .image-carousel {
+      position: relative;
+      width: 100%;
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .info-card .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .info-card .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .info-card .carousel-image {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info-card .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .info-card .carousel-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .info-card .carousel-button.prev {
+      left: 10px;
+    }
+
+    .info-card .carousel-button.next {
+      right: 10px;
+    }
+
+    .info-card .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .info-card .carousel-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .info-card .carousel-indicator.active {
+      background: rgba(102, 126, 234, 0.8);
+      width: 24px;
+      border-radius: 4px;
+    }
+
     .info-card .news-links {
       margin-top: 15px;
     }
@@ -648,12 +729,36 @@
         animDelay: 0,
         videoUrl: "https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2026/sessions/special-address-by-emmanuel-macron-president-of-france-fe783bf5fe/",
         hasVideo: true,
-        image: "https://images.unsplash.com/photo-1464047736614-af63643285bf?w=800&q=80",
-        newsHeadline: "📰 Emmanuel Macron at Davos 2026: Speech, Sunglasses and Summit Highlights",
-        newsContent: "French President Emmanuel Macron delivered a major speech at the World Economic Forum (WEF) in Davos on January 20, 2026, focusing on global geopolitical trends and the need for renewed cooperation among nations in an increasingly unstable world. In his address, he warned of a \"shift towards a world without rules\" — arguing that international law and norms are being eroded and that democratic nations must strengthen multilateral institutions and frameworks to resist unilateral power politics.",
-        newsLinks: [
-          { text: "Read Full Speech", url: "https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2026/" },
-          { text: "France at Davos 2026", url: "https://www.businessfrance.fr/davos" }
+        images: [
+          "France Davos Photos/Macron Davos/Macron Sunglasses.jpg",
+          "France Davos Photos/Macron Davos/Macron Stage.jpg",
+          "France Davos Photos/Macron Davos/Macron Panel.jpg",
+          "France Davos Photos/Macron Davos/Macron AI Center.jpg"
+        ],
+        newsItems: [
+          {
+            headline: "📰 Emmanuel Macron at Davos 2026: Speech, Sunglasses and Summit Highlights",
+            content: "French President Emmanuel Macron delivered a major speech at the World Economic Forum (WEF) in Davos on January 20, 2026, focusing on global geopolitical trends and the need for renewed cooperation among nations in an increasingly unstable world. In his address, he warned of a \"shift towards a world without rules\" — arguing that international law and norms are being eroded and that democratic nations must strengthen multilateral institutions and frameworks to resist unilateral power politics.",
+            link: { text: "Read Full Speech", url: "https://www.weforum.org/stories/2026/01/davos-2026-special-address-by-emmanuel-macron-president-of-france/" }
+          },
+          {
+            headline: "🤖 France Brings AI Firepower to Davos Amid Rising Transatlantic Tensions",
+            content: "As President Emmanuel Macron arrived in Davos with one of France's largest-ever tech delegations, Paris set out to prove it can anchor Europe's AI ambitions by blending industrial scale, startup dynamism, and a sovereign vision to challenge US and Chinese dominance.",
+            link: { text: "The French Tech Journal", url: "https://www.frenchtechjournal.com/france-brings-ai-firepower-davos-amid-rising-transatlantic-tensions/" }
+          },
+          {
+            headline: "😎 The 'Sunglasses Moment' That Broke the Internet",
+            content: "One of the most talked-about elements of Macron's Davos appearance wasn't a policy point but his unusual choice of eyewear — aviator-style sunglasses worn indoors during parts of the summit, including on stage.",
+            link: { text: "X Trends News", url: "https://x.com/i/trending/2014052478472561069" }
+          },
+          {
+            headline: "🤖 Macron Inaugurates New Paris AI Center",
+            content: "The centerpiece of France's AI roadshow was the official launch of the Centre Européen pour l'Excellence en IA (CAIE) in Paris. The center was announced one year ago, and is a partnership between the WEF and VivaTech. The CAIE is designed as Europe's answer to the question of how to lead in artificial intelligence without surrendering public trust. Anchored in Paris, the center's mission is to turn Europe's dense research base, vibrant startup scene, and policy capacity into a coordinated engine for AI innovation that delivers real economic and social value.",
+            links: [
+              { text: "Watch on LinkedIn", url: "https://www.linkedin.com/posts/emmanuelmacron_inauguration-dun-nouveau-centre-sp%C3%A9cialis%C3%A9-ugcPost-7419435674262466560-3T7K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE0kG8BObj6r7nc5sfWRNVZaz22BQG3gmI" },
+              { text: "Watch Macron Address French Entrepreneurs", url: "https://www.youtube.com/watch?v=1CTZ0C5uqTA&lc=Ugz6dk3XnzapvRin2KV4AaABAg" }
+            ]
+          }
         ]
       },
 
@@ -954,6 +1059,8 @@
     });
 
     function showInfoCard(company, event, isClick = false) {
+      resetCarousel(); // Reset carousel to first image
+
       const sectorColors = {
         ai: '#667eea',
         quantum: '#f093fb',
@@ -990,23 +1097,66 @@
         videoButtonHTML = `<a href="${company.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-button" onclick="event.stopPropagation();">Watch Davos Speech</a>`;
       }
 
+      // Handle images - either single image or carousel
       let imageHTML = '';
-      if (company.image) {
+      if (company.images && company.images.length > 0) {
+        // Multiple images - create carousel
+        imageHTML = `
+          <div class="image-carousel">
+            <div class="carousel-container">
+              <div class="carousel-images" id="carouselImages">
+                ${company.images.map(img => `<img src="${img}" alt="${company.name}" class="carousel-image">`).join('')}
+              </div>
+              ${company.images.length > 1 ? `
+                <div class="carousel-button prev" onclick="moveCarousel(-1); event.stopPropagation();">‹</div>
+                <div class="carousel-button next" onclick="moveCarousel(1); event.stopPropagation();">›</div>
+              ` : ''}
+            </div>
+            ${company.images.length > 1 ? `
+              <div class="carousel-indicators">
+                ${company.images.map((_, index) => `<div class="carousel-indicator ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index}); event.stopPropagation();"></div>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      } else if (company.image) {
+        // Single image - legacy support
         imageHTML = `<img src="${company.image}" alt="${company.name}" class="card-image">`;
       }
 
+      // Handle news items - support both old and new format
       let newsHTML = '';
-      if (company.newsHeadline || company.newsContent || company.newsLinks) {
+      if (company.newsItems && company.newsItems.length > 0) {
+        // New format with multiple news items
         newsHTML = '<div class="news-section">';
-
+        company.newsItems.forEach(item => {
+          if (item.headline) {
+            newsHTML += `<div class="news-headline">${item.headline}</div>`;
+          }
+          if (item.content) {
+            newsHTML += `<div class="news-content">${item.content}</div>`;
+          }
+          if (item.link) {
+            newsHTML += `<div class="news-links"><a href="${item.link.url}" target="_blank" rel="noopener noreferrer" class="news-link" onclick="event.stopPropagation();">${item.link.text}</a></div>`;
+          }
+          if (item.links && item.links.length > 0) {
+            newsHTML += '<div class="news-links">';
+            item.links.forEach(link => {
+              newsHTML += `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="news-link" onclick="event.stopPropagation();">${link.text}</a>`;
+            });
+            newsHTML += '</div>';
+          }
+        });
+        newsHTML += '</div>';
+      } else if (company.newsHeadline || company.newsContent || company.newsLinks) {
+        // Old format - legacy support
+        newsHTML = '<div class="news-section">';
         if (company.newsHeadline) {
           newsHTML += `<div class="news-headline">${company.newsHeadline}</div>`;
         }
-
         if (company.newsContent) {
           newsHTML += `<div class="news-content">${company.newsContent}</div>`;
         }
-
         if (company.newsLinks && company.newsLinks.length > 0) {
           newsHTML += '<div class="news-links">';
           company.newsLinks.forEach(link => {
@@ -1014,7 +1164,6 @@
           });
           newsHTML += '</div>';
         }
-
         newsHTML += '</div>';
       }
 
@@ -1095,6 +1244,59 @@
         closeVideoModal();
       }
     });
+
+    // Carousel functionality
+    let currentSlideIndex = 0;
+    let totalSlides = 0;
+
+    function moveCarousel(direction) {
+      const carouselImages = document.getElementById('carouselImages');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+
+      if (!carouselImages) return;
+
+      totalSlides = carouselImages.children.length;
+      currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+
+      carouselImages.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlideIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    function goToSlide(index) {
+      const carouselImages = document.getElementById('carouselImages');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+
+      if (!carouselImages) return;
+
+      currentSlideIndex = index;
+      carouselImages.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+      // Update indicators
+      indicators.forEach((indicator, idx) => {
+        if (idx === currentSlideIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    // Reset carousel when opening a new card
+    function resetCarousel() {
+      currentSlideIndex = 0;
+      const carouselImages = document.getElementById('carouselImages');
+      if (carouselImages) {
+        carouselImages.style.transform = 'translateX(0)';
+      }
+    }
 
     // Add some connection lines between center and major nodes
     const centerNode = companies[0];
