@@ -373,6 +373,92 @@
       font-weight: bold;
     }
 
+    .video-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .video-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .video-button::before {
+      content: "▶ ";
+      margin-right: 5px;
+    }
+
+    .video-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-modal.visible {
+      display: flex;
+      opacity: 1;
+    }
+
+    .video-container {
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-close-button {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .video-close-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -384,6 +470,14 @@
 
       .info-card {
         max-width: 90vw;
+      }
+
+      .video-container {
+        width: 95%;
+      }
+
+      .video-close-button {
+        top: -45px;
       }
     }
   </style>
@@ -446,6 +540,13 @@
 
     <div class="info-card" id="infoCard"></div>
 
+    <div class="video-modal" id="videoModal">
+      <div class="video-container">
+        <div class="video-close-button" onclick="closeVideoModal()">×</div>
+        <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
     <div class="stats-footer">
       <div class="stats-box">
         <h3>📊 France Tech Ecosystem</h3>
@@ -489,7 +590,9 @@
         y: 24.8,
         description: "Leading France's largest tech delegation ever to Davos, emphasizing Franco-German cooperation and European tech sovereignty.",
         details: ["64 heads of state attending", "Leading 23 French companies", "Focus on G7 Presidency 2026"],
-        animDelay: 0
+        animDelay: 0,
+        videoUrl: "https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2026/sessions/special-address-by-emmanuel-macron-president-of-france-fe783bf5fe/",
+        hasVideo: true
       },
 
       // AI Sector (Left side)
@@ -834,6 +937,11 @@
           '</div>';
       }
 
+      let videoButtonHTML = '';
+      if (company.hasVideo && company.videoUrl) {
+        videoButtonHTML = `<button class="video-button" onclick="openVideoModal('${company.videoUrl}'); event.stopPropagation();">Watch Davos Speech</button>`;
+      }
+
       infoCard.innerHTML = `
         <div class="close-button" onclick="hideInfoCard(); currentCompany = null;">×</div>
         <h3>
@@ -845,6 +953,7 @@
         </div>
         <div class="description">${company.description}</div>
         ${detailsHTML}
+        ${videoButtonHTML}
       `;
 
       updateInfoCardPosition(event, isClick);
@@ -882,6 +991,49 @@
     function hideInfoCard() {
       infoCard.classList.remove('visible');
     }
+
+    function openVideoModal(videoUrl) {
+      const videoModal = document.getElementById('videoModal');
+      const videoFrame = document.getElementById('videoFrame');
+
+      // Convert WEF URL to embed format if it's a YouTube video
+      // For now, we'll use the direct URL - you can update this with the actual embed URL
+      // Common embed patterns:
+      // YouTube: https://www.youtube.com/embed/VIDEO_ID
+      // Vimeo: https://player.vimeo.com/video/VIDEO_ID
+
+      // If you have a specific YouTube or Vimeo embed URL, replace videoUrl here
+      // For WEF, the video might be embedded on their page, so we'll iframe the whole page
+      videoFrame.src = videoUrl;
+
+      videoModal.classList.add('visible');
+
+      // Hide the info card when opening video
+      hideInfoCard();
+      currentCompany = null;
+    }
+
+    function closeVideoModal() {
+      const videoModal = document.getElementById('videoModal');
+      const videoFrame = document.getElementById('videoFrame');
+
+      videoModal.classList.remove('visible');
+      videoFrame.src = ''; // Stop video playback
+    }
+
+    // Close video modal when clicking outside the video container
+    document.getElementById('videoModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeVideoModal();
+      }
+    });
+
+    // Close video modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+      }
+    });
 
     // Add some connection lines between center and major nodes
     const centerNode = companies[0];
